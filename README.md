@@ -4,7 +4,7 @@ O projeto "Cadastro de Clientes e Contatos" é uma aplicação web desenvolvida 
 
 ## Tecnologias Utilizadas
 
-## O projeto utiliza as seguintes tecnologias:
+O projeto utiliza as seguintes tecnologias:
 
 JavaScript ou TypeScript
 Node.js (backend)
