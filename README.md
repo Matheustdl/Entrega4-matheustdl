@@ -17,7 +17,7 @@ Para configurar e executar o projeto, siga as etapas abaixo:
 
 Clone este repositório em seu ambiente.
 
-Navegue até o diretório do projeto usando o terminal.
+Entre no diretório do projeto.
 
 Instale as dependências do backend executando o comando: npm install ou yarn install.
 
