@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { LoginData } from "../../pages/Login/validator";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
@@ -70,6 +70,32 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       console.log(error);
     }
   };
+  /* const userUpdate = async (formData: IUserUpdate, userId: number) => {
+    try {
+      const token = localStorage.getItem("user-token");
+      const response = await api.patch(`/user/${userId}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setLoading(true);
+      setUser(response.data);
+      localStorage.setItem("user-name", response.data.name);
+      localStorage.setItem("user-email", response.data.email);
+      localStorage.setItem("user-phone", response.data.phone);
+      setDataUpdated(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    if (dataUpdated) {
+      setDataUpdated(false);
+    }
+  }, [dataUpdated]);*/
   const userUpdate = async (formData: IUserUpdate, userId: number) => {
     try {
       const token = localStorage.getItem("user-token");
@@ -81,22 +107,24 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
       setLoading(true);
       setUser(response.data);
-      setDataUpdated(true);
-
       localStorage.setItem("user-name", response.data.name);
       localStorage.setItem("user-email", response.data.email);
       localStorage.setItem("user-phone", response.data.phone);
+      setDataUpdated(true);
+
+      // Atualize os dados do usuário no estado do componente e no armazenamento local
+      setUserData({
+        name: response.data.name,
+        email: response.data.email,
+        phone: response.data.phone,
+        id: response.data.id,
+      });
     } catch (error) {
       console.log(error);
     } finally {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    if (dataUpdated) {
-      setDataUpdated(false);
-    }
-  }, [dataUpdated]);
 
   const userDelete = async (userId: number) => {
     try {
@@ -119,44 +147,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     navigate("/");
   };
 
-  const providerValue = useMemo(
-    () => ({
-      userLogin,
-      loading,
-      user,
-      Logoult,
-      registerUser,
-      userData,
-      setUserData,
-      userEditModal,
-      setUserEditModal,
-      userDeleteModal,
-      setUserDeleteModal,
-      userEdit,
-      setUserEdit,
-      userUpdate,
-      userDelete,
-    }),
-    [
-      userLogin,
-      loading,
-      user,
-      Logoult,
-      registerUser,
-      userData,
-      setUserData,
-      userEditModal,
-      setUserEditModal,
-      userDeleteModal,
-      setUserDeleteModal,
-      userEdit,
-      setUserEdit,
-      userUpdate,
-      userDelete,
-    ]
-  );
   return (
-    <AuthContext.Provider value={providerValue}>
+    <AuthContext.Provider
+      value={{
+        userLogin,
+        loading,
+        user,
+        Logoult,
+        registerUser,
+        userData,
+        setUserData,
+        userEditModal,
+        setUserEditModal,
+        userDeleteModal,
+        setUserDeleteModal,
+        userEdit,
+        setUserEdit,
+        userUpdate,
+        userDelete,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -14,7 +14,7 @@ export const Dashboard = () => {
       email: localStorage.getItem("user-email") || "",
       phone: localStorage.getItem("user-phone") || "",
       id: localStorage.getItem("user-id") || "",
-    } as IUser);
+    } as unknown as IUser);
   }, []);
   return (
     <>

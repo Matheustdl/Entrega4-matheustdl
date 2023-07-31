@@ -6,12 +6,12 @@ export interface AuthProviderProps {
   children: ReactNode;
 }
 export interface IUser {
-  find(arg0: (userData: { id: number }) => boolean): unknown;
-  id: string;
   name: string;
   email: string;
   phone: string;
+  id: number;
 }
+
 export interface IUserUpdate {
   name?: string;
   email?: string;
@@ -24,7 +24,7 @@ export interface IUserRegister {
   Phone: string | number;
 }
 export interface Contact {
-  id: number;
+  id: number | string;
   name: string;
   email: string;
   phone: string;
