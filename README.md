@@ -17,7 +17,7 @@ Para configurar e executar o projeto, siga as etapas abaixo:
 
 Verifique se o Node.js está instalado em sua máquina.
 
-Clone este repositório em seu ambiente Unix (Linux ou Mac OS X).
+Clone este repositório em seu ambiente.
 
 Navegue até o diretório do projeto usando o terminal.
 
