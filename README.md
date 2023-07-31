@@ -4,7 +4,7 @@ O projeto "Cadastro de Clientes e Contatos" é uma aplicação web desenvolvida 
 
 ## Tecnologias Utilizadas
 
-## O projeto utiliza as seguintes tecnologias:
+O projeto utiliza as seguintes tecnologias:
 
 JavaScript ou TypeScript
 Node.js (backend)
@@ -13,23 +13,19 @@ Banco de dados (por exemplo, PostgreSQL)
 
 ## Configuração e Execução
 
-## Para configurar e executar o projeto, siga as etapas abaixo:
+Para configurar e executar o projeto, siga as etapas abaixo:
 
-Verifique se o Node.js está instalado em sua máquina.
+Clone este repositório em seu ambiente.
 
-Clone este repositório em seu ambiente Unix (Linux ou Mac OS X).
-
-Navegue até o diretório do projeto usando o terminal.
+Entre no diretório do projeto.
 
 Instale as dependências do backend executando o comando: npm install ou yarn install.
 
-Dentro da pasta "frontend", instale as dependências do frontend com o comando: npm install ou yarn install.
+Dentro da pasta "front", instale as dependências do front com o comando: npm install ou yarn install.
 
-Inicie o servidor backend com o comando: npm start ou yarn start.
+Inicie o servidor backend com o comando: npm run dev ou yarn start.
 
-Em outra janela do terminal, dentro do diretório do projeto, inicie o frontend com os comandos: cd frontend e depois npm start ou yarn start.
-
-Acesse a aplicação em seu navegador através do endereço: http://localhost:3000.
+Em outra janela do terminal, dentro do diretório do projeto, inicie o front com os comandos: cd front e depois npm run dev ou yarn start.
 
 ## Funcionalidades das Rotas
 
