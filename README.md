@@ -13,7 +13,7 @@ Banco de dados (por exemplo, PostgreSQL)
 
 ## Configuração e Execução
 
-## Para configurar e executar o projeto, siga as etapas abaixo:
+Para configurar e executar o projeto, siga as etapas abaixo:
 
 Verifique se o Node.js está instalado em sua máquina.
 
