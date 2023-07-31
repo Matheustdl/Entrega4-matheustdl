@@ -27,7 +27,7 @@ export interface Contact {
   id: number | string;
   name: string;
   email: string;
-  phone: string;
+  telephone: string;
 }
 export interface AuthContextValues {
   userLogin: (data: LoginData) => Promise<void>;

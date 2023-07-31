@@ -1,3 +1,4 @@
+import { ContactProvider } from "./providers/contactProvider";
 import { AuthProvider } from "./providers/userProvider/AuthProvider";
 import { RoutesMain } from "./routes";
 import GlobalStyle from "./styles/GlobalStyle";
@@ -7,7 +8,9 @@ function App() {
     <>
       <GlobalStyle />
       <AuthProvider>
-        <RoutesMain />
+        <ContactProvider>
+          <RoutesMain />
+        </ContactProvider>
       </AuthProvider>
     </>
   );

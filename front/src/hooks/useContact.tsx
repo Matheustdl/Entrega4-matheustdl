@@ -1,8 +1,10 @@
-import { useContext } from "react";
-import { ContactContext } from "../providers/contactProvider/contactProvider";
+/*import { useContext } from "react";
+import { ContactContext } from "../providers/contactProvider";
+
 
 export const useContact = () => {
   const contactContext = useContext(ContactContext);
 
   return contactContext;
 };
+*/

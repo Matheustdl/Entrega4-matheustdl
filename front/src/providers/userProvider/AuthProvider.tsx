@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [userEditModal, setUserEditModal] = useState(false);
   const [userDeleteModal, setUserDeleteModal] = useState(false);
   const [userEdit, setUserEdit] = useState<IUserUpdate | null>(null);
-  const [dataUpdated, setDataUpdated] = useState(false);
+  const [, setDataUpdated] = useState(false);
 
   const navigate = useNavigate();
 
@@ -70,32 +70,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       console.log(error);
     }
   };
-  /* const userUpdate = async (formData: IUserUpdate, userId: number) => {
-    try {
-      const token = localStorage.getItem("user-token");
-      const response = await api.patch(`/user/${userId}`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      setLoading(true);
-      setUser(response.data);
-      localStorage.setItem("user-name", response.data.name);
-      localStorage.setItem("user-email", response.data.email);
-      localStorage.setItem("user-phone", response.data.phone);
-      setDataUpdated(true);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    if (dataUpdated) {
-      setDataUpdated(false);
-    }
-  }, [dataUpdated]);*/
   const userUpdate = async (formData: IUserUpdate, userId: number) => {
     try {
       const token = localStorage.getItem("user-token");
@@ -112,7 +86,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       localStorage.setItem("user-phone", response.data.phone);
       setDataUpdated(true);
 
-      // Atualize os dados do usuário no estado do componente e no armazenamento local
       setUserData({
         name: response.data.name,
         email: response.data.email,
