@@ -15,7 +15,7 @@ Banco de dados (por exemplo, PostgreSQL)
 
 Para configurar e executar o projeto, siga as etapas abaixo:
 
-Clone este repositório em seu ambiente.
+Clone este repositório em seu ambiente utilizando a chave ssh.
 
 Entre no diretório do projeto.
 
