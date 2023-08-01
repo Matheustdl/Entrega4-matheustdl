@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { api } from "../../services/api";
-import { IContact } from "../../providers/contactProvider/@types";
+import { ContactContext } from "../../providers/contactProvider";
+import { UlContainer } from "./styled";
 
 export const ContactCart = () => {
-  const [contact, setcontact] = useState<IContact[]>([]);
+  const { contacts, setContacts } = useContext(ContactContext);
 
   useEffect(() => {
-    const RenderItens = async () => {
-      const token = localStorage.getItem("user-id");
+    const fetchContacts = async () => {
+      const token = localStorage.getItem("user-token");
       try {
         const id = localStorage.getItem("user-id") || "";
         const response = await api.get(`/user/${id}/contacts`, {
@@ -15,24 +16,27 @@ export const ContactCart = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        setcontact(response.data);
+        setContacts(response.data);
       } catch (error) {
         console.log(error);
       }
     };
-    RenderItens();
-  }, [setcontact]);
+    fetchContacts();
+  }, []);
+
   return (
     <>
-      {contact.map((contacts) => (
-        <li key={contacts.id}>
-          <div>
-            <p>{contacts.name}</p>
-            <p>{contacts.email}</p>
-            <p>{contacts.telephone}</p>
-          </div>
-        </li>
-      ))}
+      <UlContainer>
+        {contacts.map((contact) => (
+          <li key={contact.id}>
+            <div>
+              <p>{contact.name}</p>
+              <p>{contact.email}</p>
+              <p>{contact.telephone}</p>
+            </div>
+          </li>
+        ))}
+      </UlContainer>
     </>
   );
 };

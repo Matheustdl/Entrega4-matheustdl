@@ -2,6 +2,7 @@ import { MdDeleteSweep, MdManageAccounts } from "react-icons/md";
 import { useAuth } from "../../hooks/useAuth";
 import UserEditModal from "../modal/userModalEdit";
 import UserDeleteModal from "../modal/deleteUser";
+import { DivContainer, DivInfoUser, DivUser } from "./style";
 
 const UserInfo = () => {
   const {
@@ -13,25 +14,25 @@ const UserInfo = () => {
   } = useAuth();
 
   return (
-    <div>
+    <DivContainer>
       {userData && (
-        <>
-          <div>
-            <h1>{userData.name}</h1>
-          </div>
+        <DivInfoUser>
+          <h1>{userData.name}</h1>
           <p>{userData.email}</p>
-          <p>{userData.phone}</p>
-          <button type="submit" onClick={() => setUserEditModal(true)}>
-            <MdManageAccounts />
-          </button>
-          {userEditModal && <UserEditModal />}
-          <button onClick={() => setUserDeleteModal(true)}>
-            <MdDeleteSweep />
-          </button>
-          {userDeleteModal && <UserDeleteModal />}
-        </>
+          <DivUser>
+            <p>{userData.phone}</p>
+            <button type="submit" onClick={() => setUserEditModal(true)}>
+              <MdManageAccounts />
+            </button>
+            {userEditModal && <UserEditModal />}
+            <button onClick={() => setUserDeleteModal(true)}>
+              <MdDeleteSweep />
+            </button>
+            {userDeleteModal && <UserDeleteModal />}
+          </DivUser>
+        </DivInfoUser>
       )}
-    </div>
+    </DivContainer>
   );
 };
 

@@ -16,11 +16,9 @@ export interface IContactUpdate {
 }
 
 export interface IContactContext {
-  contact: IContact[];
-  setContact: React.Dispatch<React.SetStateAction<IContact[]>>;
   contacts: IContact[];
-  setContacts: React.Dispatch<React.SetStateAction<IContact[]>>;
   createNewContact: (formData: IContact) => Promise<void>;
   contactCreateModal: boolean;
   setContactCreateModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setContacts: React.Dispatch<React.SetStateAction<IContact[]>>;
 }

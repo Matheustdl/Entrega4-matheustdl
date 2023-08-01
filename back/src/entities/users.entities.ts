@@ -11,7 +11,7 @@ import {
 import { getRounds, hashSync } from 'bcryptjs';
 import Contact from './contacts.entities';
 
-@Entity('users')
+@Entity('user')
 class User {
     @PrimaryGeneratedColumn('increment')
     id: number;
