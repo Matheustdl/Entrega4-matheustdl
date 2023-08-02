@@ -19,6 +19,24 @@ Clone este repositório em seu ambiente utilizando a chave ssh.
 
 Entre no diretório do projeto.
 
+Rodar as Migrations.
+
+Dentro do diretório do backend, execute o seguinte comando para rodar as migrations:
+
+npm typeorm migration:run
+
+Você precisa criar um arquivo chamado .env na raiz do diretório do backend e preenchê-lo com as informações necessárias. As variáveis a serem definidas podem incluir informações sensíveis como credenciais de banco de dados, chaves de API, entre outras.
+
+Aqui está um exemplo de como o arquivo .env pode ser preenchido:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=nome_do_banco
+
+JWT_SECRET=sua_chave_secreta_para_jwt
+
 Instale as dependências do backend executando o comando: npm install ou yarn install.
 
 Dentro da pasta "front", instale as dependências do front com o comando: npm install ou yarn install.
