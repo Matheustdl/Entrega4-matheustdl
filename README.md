@@ -19,20 +19,13 @@ Clone este repositório em seu ambiente utilizando a chave ssh.
 
 Entre no diretório do projeto.
 
-Rodar as Migrations.
-
-Dentro do diretório do backend, execute o seguinte comando para rodar as migrations:
-
-npm typeorm migration:run
-
 Rode as Migrations.
 
 Dentro do diretório do backend, execute o seguinte comando para rodar as migrations:
 
 npm run typeorm migration:run -- -d ./src/data-source
 
-
-Você precisa criar um arquivo chamado .env na raiz do diretório do backend e preenchê-lo com as informações necessárias. As variáveis a serem definidas podem incluir informações sensíveis como credenciais de banco de dados, chaves de API, entre outras.
+Você precisa criar um arquivo chamado .env na raiz do diretório do backend e preenchê-lo com as informações necessárias. 
 
 Aqui está um exemplo de como o arquivo .env pode ser preenchido:
 
