@@ -19,13 +19,12 @@ Clone este repositório em seu ambiente utilizando a chave ssh.
 
 Entre no diretório do projeto.
 
-
 Rodar as Migrations.
 
 Dentro do diretório do backend, execute o seguinte comando para rodar as migrations:
 
 npm typeorm migration:run
-=======
+
 Rode as Migrations.
 
 Dentro do diretório do backend, execute o seguinte comando para rodar as migrations:
