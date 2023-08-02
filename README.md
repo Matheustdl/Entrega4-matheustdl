@@ -1,12 +1,18 @@
 ## Cadastro de Clientes e Contatos - Aplicação Fullstack
+
 O projeto "Cadastro de Clientes e Contatos" é uma aplicação web desenvolvida em TypeScript que possibilita o cadastro de clientes e seus respectivos contatos. A aplicação oferece funcionalidades básicas de um CRUD (Create, Read, Update, Delete) para gerenciar os dados dos clientes e contatos, além de permitir a geração de um relatório em tela, exibindo os detalhes do cliente e seus contatos associados.
 
 ## Tecnologias Utilizadas
+
 O projeto utiliza as seguintes tecnologias:
 
-JavaScript ou TypeScript Node.js (backend) React (frontend) Banco de dados (por exemplo, PostgreSQL)
+JavaScript ou TypeScript
+Node.js (backend)
+React (frontend)
+Banco de dados (por exemplo, PostgreSQL)
 
-Configuração e Execução
+## Configuração e Execução
+
 Para configurar e executar o projeto, siga as etapas abaixo:
 
 Clone este repositório em seu ambiente utilizando a chave ssh.
@@ -21,10 +27,12 @@ Inicie o servidor backend com o comando: npm run dev ou yarn start.
 
 Em outra janela do terminal, dentro do diretório do projeto, inicie o front com os comandos: cd front e depois npm run dev ou yarn start.
 
-Funcionalidades das Rotas
+## Funcionalidades das Rotas
+
 A aplicação possui as seguintes rotas e endpoints:
 
-Rotas de Clientes
+## Rotas de Clientes
+
 /users (POST): Página de cadastro de um novo cliente. Permite cadastrar um novo cliente no sistema.
 
 /users/:id (PATCH): Página de modificação de um cliente existente. Permite atualizar os dados de um cliente específico.
@@ -35,7 +43,8 @@ Rotas de Clientes
 
 /users (GET): Página de listagem de todos os usuários cadastrados. Mostra todos os clientes cadastrados no sistema.
 
-Rotas de Contatos
+## Rotas de Contatos
+
 /contacts (POST): Página de cadastro de um novo contato. Permite cadastrar um novo contato vinculado a um cliente.
 
 /contacts/:id (PATCH): Página de atualização de um contato existente. Permite atualizar os dados de um contato específico.
@@ -44,5 +53,6 @@ Rotas de Contatos
 
 /contacts (GET): Página de listagem de contatos do usuário. Mostra todos os contatos cadastrados vinculados ao usuário.
 
-Outras Rotas
+## Outras Rotas
+
 /users/:id/contacts (GET): Página de listagem de contatos do usuário. Mostra todos os contatos cadastrados vinculados ao usuário.
