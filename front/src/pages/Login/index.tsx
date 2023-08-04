@@ -16,7 +16,11 @@ import BackGround from "../../assets/BackGround.jpg";
 import Logo from "../../assets/Logo.jpg";
 
 export const Login = () => {
-  const { register, handleSubmit } = useForm<LoginData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
   });
   const { userLogin } = useAuth();
@@ -41,6 +45,7 @@ export const Login = () => {
                 placeholder="Digite seu email aqui"
                 {...register("email")}
               />
+              {errors.email && <span>{errors.email.message}</span>}
               <label htmlFor="password">Senha</label>
               <input
                 type="password"
@@ -48,6 +53,7 @@ export const Login = () => {
                 placeholder="Digite seu email aqui"
                 {...register("password")}
               />
+              {errors.password && <span>{errors.password.message}</span>}
 
               <Btnbrown type="submit">Entrar</Btnbrown>
 

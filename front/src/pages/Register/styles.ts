@@ -84,6 +84,9 @@ export const FormLogin = styled.form`
     color: #000;
     text-align: center;
   }
+  span {
+    color: #000;
+  }
 `;
 
 export const Btnbrown = styled.button`

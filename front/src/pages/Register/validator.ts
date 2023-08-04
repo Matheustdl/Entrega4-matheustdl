@@ -6,8 +6,8 @@ export const registerSchema = z.object({
   password: z.string().nonempty("Senha é obrigatória"),
   phone: z
     .string()
-    .regex(/^\(\d{2}\)\d{8,9}$/)
-    .nonempty("Senha é obrigatória"),
+    .nonempty("Telefone inválido! Ex: (xx)xxxxxxxxx")
+    .regex(/^\(\d{2}\)\d{8,9}$/),
 });
 
 export type RegisterData = z.infer<typeof registerSchema>;

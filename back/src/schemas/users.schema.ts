@@ -1,15 +1,14 @@
 import { z } from 'zod';
 
-const numberRegex = /^\(\d{2}\)\d{8,9}$/;
-
 const userSchema = z.object({
     id: z.number(),
     name: z.string().max(45),
     email: z.string().email().max(45),
     password: z.string().max(120),
-    phone: z.string().refine((val) => numberRegex.test(val), {
-        message: 'Invalid phone number',
-    }),
+    phone: z
+        .string()
+        .nonempty('Telefone inválido! Ex: (xx)xxxxxxxxx')
+        .regex(/^\(\d{2}\)\d{8,9}$/),
     createdAt: z.string(),
 });
 

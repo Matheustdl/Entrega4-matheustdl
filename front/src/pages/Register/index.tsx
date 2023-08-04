@@ -15,7 +15,11 @@ import {
 import Logo from "../../assets/Logo.jpg";
 import BackGround from "../../assets/BackGround.jpg";
 const Register = () => {
-  const { register, handleSubmit } = useForm<RegisterData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterData>({
     resolver: zodResolver(registerSchema),
   });
   const { registerUser } = useAuth();
@@ -40,6 +44,7 @@ const Register = () => {
                 placeholder="Seu nome completo"
                 {...register("name")}
               />
+              {errors.name && <span>{errors.name.message}</span>}
               <label htmlFor="email">Digite seu email</label>
               <input
                 type="email"
@@ -47,6 +52,7 @@ const Register = () => {
                 placeholder="Seu e-mail"
                 {...register("email")}
               />
+              {errors.email && <span>{errors.email.message}</span>}
               <label htmlFor="password">Digite seu senha</label>
               <input
                 type="password"
@@ -54,6 +60,7 @@ const Register = () => {
                 placeholder="Sua senha"
                 {...register("password")}
               />
+              {errors.password && <span>{errors.password.message}</span>}
               <label htmlFor="telephone">Digite seu telephone</label>
               <input
                 type="telephone"
@@ -61,6 +68,7 @@ const Register = () => {
                 placeholder="Seu telephone"
                 {...register("phone")}
               />
+              {errors.phone && <span>{errors.phone.message}</span>}
               <Btnbrown type="submit">Cadastrar</Btnbrown>
 
               <p>ou</p>
